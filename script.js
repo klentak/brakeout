@@ -68,6 +68,7 @@ function frame(){
                 
             }
             if(bricks[i][j].visible){
+                lives++;
                 flag=1;
             }
         }
