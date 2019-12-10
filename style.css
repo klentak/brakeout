@@ -1,0 +1,21 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+.container{
+    display: flex;
+    margin-top: 50px;
+}
+
+.side{
+    flex: 1;
+}
+
+.content{
+    flex: 2;
+}
+
+#canvas{
+    border: 1px solid white;
+}
