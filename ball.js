@@ -6,11 +6,7 @@ class Ball{
         this.dx = dx;
         this.dy = dy;
 
-        var r = Math.floor(Math.random() * 256);
-        var g = Math.floor(Math.random() * 256);
-        var b = Math.floor(Math.random() * 256);
-
-        this.color = `rgb(${r},${g},${b})`;
+        this.color = 'white';
     }
     draw(ctx) {
         ctx.beginPath();

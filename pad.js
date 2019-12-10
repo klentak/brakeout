@@ -18,11 +18,10 @@ class Pad{
         this.x += this.dx;
 
         //zabezpieczenie aby nie wyleciała dołem
-        if(this.x > 650-this.h){
-            this.x = 650-this.h;
+        if(this.x > 650-this.w){
+            this.x = 650-this.w;
         }else if(this.x < 0){
             this.x = 0;
-
         }
     }
 }
