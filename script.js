@@ -65,16 +65,15 @@ function frame(){
                         bricks[i][j].visible = false;
                     }
                 }
-                
             }
             if(bricks[i][j].visible){
-                lives++;
                 flag=1;
             }
         }
     }
 
     if(flag == 0){
+        lives++;
         pause();
         brick_create();
     }
@@ -133,7 +132,6 @@ function pause(){
     ball = new Ball(325, 670, 8, 4, -4);
     pad = new Pad(285, 680);
     requestAnimationFrame(frame);
-
 }
 
 requestAnimationFrame(frame);
