@@ -9,7 +9,12 @@ brake_bricks = 1;
 lives = 3;
 stop = true;
 
+
+brick_create();
+requestAnimationFrame(frame);
+
 function brick_create(){
+    bricks = [];
     for(i=0; i<5; i++){
         bricks[i] = [];
         for(j=0; j<9; j++){
@@ -27,7 +32,6 @@ function brick_draw(ctx){
         }
     }
 }
-brick_create()
 
 function frame(){
     ctx.clearRect(0,0,650,700);
@@ -38,7 +42,7 @@ function frame(){
     ctx.fillText(score, 70, 690);
     ctx.fillText(lives, 630, 690);
     ball.draw(ctx);
-    flag = 0;
+
 
     brick_draw(ctx);
 
@@ -70,12 +74,6 @@ function frame(){
                 flag=1;
             }
         }
-    }
-
-    if(flag == 0){
-        lives++;
-        pause();
-        brick_create();
     }
 
     if( ball.cy >= pad.y && ball.cy <= pad.y + pad.h){
@@ -115,6 +113,7 @@ function restart(){
         alert("GAME OVER, your score: "+score);
         score = 0;
         lives = 3;
+        brick_create();
     }else{
         if(score<200){
             score = 0;
@@ -122,9 +121,9 @@ function restart(){
             score -= 200;
         }
     } 
-        ball = new Ball(325, 670, 8, 4, -4);
-        pad = new Pad(285, 680);
-        requestAnimationFrame(frame);
+    ball = new Ball(325, 670, 8, 4, -4);
+    pad = new Pad(285, 680);
+    requestAnimationFrame(frame);
 }
 
 function pause(){
@@ -134,25 +133,23 @@ function pause(){
     requestAnimationFrame(frame);
 }
 
-requestAnimationFrame(frame);
-
 function keyDown(e){
-    if(e.keyCode == "190"){
-        pad.dx=3;
-        if(stop==true){
-            ball = new Ball(325, 670, 8, 4, -4);
-            stop = false;
-            requestAnimationFrame(frame);
-        }
+if(e.keyCode == "190"){
+    pad.dx=3;
+    if(stop==true){
+        ball = new Ball(325, 670, 8, 4, -4);
+        stop = false;
+        requestAnimationFrame(frame);
     }
-    if(e.keyCode == "188"){
-        pad.dx=-3;
-        if(stop==true){
-            stop = false;
-            ball = new Ball(325, 670, 8, -4, -4);
-            requestAnimationFrame(frame);
-        }
+}
+if(e.keyCode == "188"){
+    pad.dx=-3;
+    if(stop==true){
+        stop = false;
+        ball = new Ball(325, 670, 8, -4, -4);
+        requestAnimationFrame(frame);
     }
+}
 }
 
 function keyUp(e){
