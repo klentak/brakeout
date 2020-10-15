@@ -5,4 +5,4 @@ Gdy paletka porusza się w przeciwnym kirunku piłka wraca do swojej
 wyjściowej prędkości i zmienia kierunek. Po zbicu wszystkich klocków 
 gracz dostaje dodatkowe zycie i gra trwa dalej.
 
-link: <a href="www.klentak.github.io/brakeout" target="_blank">klentak.github.io/brakeout</a>
+https://klentak.github.io/brakeout/
